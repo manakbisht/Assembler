@@ -1,52 +1,63 @@
 public final class Opcode {
     public String operand;
-    public final String opcode;
+    public String opcode=null;
 
-    public Opcode(String assemblyOpcode, String _operand) {
+    public Opcode(String assemblyOpcode ) {
         opcode = AssemblyToOpcode.table.get(assemblyOpcode);
+    }
+    @Override
+    public String toString()
+    {
+        String x="";
+        x+=opcode+" "+operand;
+        return x;
+    }
+    public void setOperand(String _operand)
+    {
 
         switch (opcode) {
-            case "CLA":
+            case "0000":
                 operand = null;
                 break;
-            case "LAC":
+            case "0001":
                 operand = _operand;
                 break;
-            case "SAC":
+            case "0010":
                 operand = _operand;
                 break;
-            case "ADD":
+            case "0011":
                 operand = _operand;
                 break;
-            case "SUB":
+            case "0100":
                 operand = _operand;
                 break;
-            case "BRZ":
+            case "0101":
                 operand = _operand;
                 break;
-            case "BRN":
+            case "0110":
                 operand = _operand;
                 break;
-            case "BRP":
+            case "0111":
                 operand = _operand;
                 break;
-            case "INP":
+            case "1000":
                 operand = _operand;
                 break;
-            case "DSP":
+            case "1001":
                 operand = _operand;
                 break;
-            case "MUL":
+            case "1010":
                 operand = _operand;
                 break;
-            case "DIV":
+            case "1011":
                 operand = _operand;
-            case "STP":
+            case "1100":
                 operand = null;
                 break;
             default:
                 operand = null;
                 break;
         }
+        //System.out.println(operand);
     }
 }
