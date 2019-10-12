@@ -11,7 +11,7 @@ public final class Symbol {
         x+=name+" "+type+" "+String.valueOf(offset)+" "+String.valueOf(value)+" "+String.valueOf(size);
         return x;
     }
-    public void update(Symbol o)
+    public int update(Symbol o)
     {
         if(type!=o.type)
         {
@@ -26,7 +26,9 @@ public final class Symbol {
         else if(o.offset!=-1)
         {
             offset=o.offset;
+            return 0;
         }
+        return 1;
     }
     public Symbol(String name, String type, int offset, int value, int size) {
         this.name = name;
