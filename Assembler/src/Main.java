@@ -64,7 +64,7 @@ public class Main
         {
             if(symbolTable.get(i).getName().equals(o.getName()))
             {
-                symbolTable.get(i).update(o);
+                next=symbolTable.get(i).update(o);
                 flag=1;
             }
         }
