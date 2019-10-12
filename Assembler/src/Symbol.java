@@ -13,9 +13,20 @@ public final class Symbol {
     }
     public void update(Symbol o)
     {
-        if(o.offset!=-1)
+        if(type!=o.type)
+        {
+            System.out.println(name);
+            System.out.println("Label name cannot be same as variable name");
+        }
+        else if(offset!=-1&&o.offset!=-1)
+        {
+            System.out.println(name);
+            System.out.println("Symbol already declared");               
+        }
+        else if(o.offset!=-1)
+        {
             offset=o.offset;
-        type=o.type;
+        }
     }
     public Symbol(String name, String type, int offset, int value, int size) {
         this.name = name;
