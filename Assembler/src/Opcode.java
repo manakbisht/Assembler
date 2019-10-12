@@ -1,8 +1,10 @@
-public final class Opcode {
+public final class Opcode 
+{
     public String operand;
     public String opcode=null;
 
-    public Opcode(String assemblyOpcode ) {
+    public Opcode(String assemblyOpcode ) 
+    {
         opcode = AssemblyToOpcode.table.get(assemblyOpcode);
     }
     @Override
